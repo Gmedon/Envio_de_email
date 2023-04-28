@@ -1,0 +1,10 @@
+Pra fazer o receimento das imagens precisamos instalar uma biblioteca chamada multer!! "npm install multer" && "npm install @types/multer"
+após a instalação precisamos configurar o multer. "const upload = multer({ dest: "./temp"}) isso servirá para armazenar o arquivo em uma
+pasta.
+
+para criar uma rota de recebimento muda um pouco do processo padrão, precisamos adicionar alguma novas funções nas rotas.
+"router.post("/upload", upload.single("avatar"), ApiController.uploadFile)" avatar siginifica o nome do campo de recebimento, nessa
+sintaxe iremos receber apenas 1 arquivo.
+
+no controller iremos criar a rota e para verificar os dados recebidos iremos colocar um console.log no file ou files recebidos
+"console.log(req.file)"
